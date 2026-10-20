@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.drivenext.MainActivity
 import com.example.drivenext.R
 import com.example.drivenext.utils.NetworkHelper
+import com.example.drivenext.utils.SessionManager
 
 class SplashActivity : AppCompatActivity() {
 
@@ -28,13 +29,19 @@ class SplashActivity : AppCompatActivity() {
             return
         }
 
+        if (SessionManager.isLoggedIn(this)) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
+
         val prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
         val isOnboardingCompleted = prefs.getBoolean("is_onboarding_completed", false)
 
         if (!isOnboardingCompleted) {
             startActivity(Intent(this, OnboardingActivity::class.java))
         } else {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, AuthChoiceActivity::class.java))
         }
         finish()
     }

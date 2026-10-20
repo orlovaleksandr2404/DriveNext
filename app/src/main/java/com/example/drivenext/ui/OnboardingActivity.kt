@@ -62,7 +62,7 @@ class OnboardingActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
         prefs.edit().putBoolean("is_onboarding_completed", true).apply()
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AuthChoiceActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
