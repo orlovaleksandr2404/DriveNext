@@ -37,20 +37,25 @@ class SettingsFragment : Fragment() {
         }
 
         binding.btnMyBookings.setOnClickListener {
-            Toast.makeText(requireContext(), "Мои бронирования", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), MyBookingsActivity::class.java))
         }
+
         binding.btnConnectCar.setOnClickListener {
             Toast.makeText(requireContext(), "Экран добавления автомобиля", Toast.LENGTH_SHORT).show()
         }
+
         binding.btnTheme.setOnClickListener {
             Toast.makeText(requireContext(), "Смена темы оформления", Toast.LENGTH_SHORT).show()
         }
+
         binding.btnNotifications.setOnClickListener {
             Toast.makeText(requireContext(), "Настройки уведомлений", Toast.LENGTH_SHORT).show()
         }
+
         binding.btnHelp.setOnClickListener {
             Toast.makeText(requireContext(), "Раздел помощи", Toast.LENGTH_SHORT).show()
         }
+
         binding.btnInviteFriend.setOnClickListener {
             Toast.makeText(requireContext(), "Пригласить друга", Toast.LENGTH_SHORT).show()
         }

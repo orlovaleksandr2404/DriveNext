@@ -1,10 +1,10 @@
 package com.example.drivenext
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.drivenext.databinding.ActivityMainBinding
+import com.example.drivenext.ui.FavoritesFragment
 import com.example.drivenext.ui.HomeFragment
 import com.example.drivenext.ui.SettingsFragment
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_bookings -> {
-                    Toast.makeText(this, "Экран избранного / бронирований", Toast.LENGTH_SHORT).show()
+                    replaceFragment(FavoritesFragment())
                     true
                 }
                 R.id.nav_settings -> {

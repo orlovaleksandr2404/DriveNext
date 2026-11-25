@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.drivenext.databinding.ActivitySearchResultsBinding
 import com.example.drivenext.utils.CarRepository
 import kotlinx.coroutines.launch
+import android.content.Intent
 
 class SearchResultsActivity : AppCompatActivity() {
 
@@ -40,10 +41,16 @@ class SearchResultsActivity : AppCompatActivity() {
         carAdapter = CarAdapter(
             cars = emptyList(),
             onBookClick = { car ->
-                Toast.makeText(this, "Бронирование: ${car.model}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, BookingActivity::class.java).apply {
+                    putExtra(BookingActivity.EXTRA_CAR, car)
+                }
+                startActivity(intent)
             },
             onDetailsClick = { car ->
-                Toast.makeText(this, "Детали: ${car.model}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, CarDetailsActivity::class.java).apply {
+                    putExtra(CarDetailsActivity.EXTRA_CAR, car)
+                }
+                startActivity(intent)
             }
         )
         binding.rvResults.layoutManager = LinearLayoutManager(this)

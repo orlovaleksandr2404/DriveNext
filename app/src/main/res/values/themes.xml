@@ -4,5 +4,6 @@
         <item name="colorPrimaryVariant">#140B33</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

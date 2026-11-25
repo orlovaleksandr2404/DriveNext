@@ -85,6 +85,26 @@ xmlns:tools="http://schemas.android.com/tools">
         android:exported="false"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="adjustResize" />
+    <activity
+        android:name=".ui.CarDetailsActivity"
+        android:exported="false"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".ui.BookingActivity"
+        android:exported="false"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".ui.BookingSuccessActivity"
+        android:exported="false"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".ui.MyBookingsActivity"
+        android:exported="false"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".ui.BookingDetailsActivity"
+        android:exported="false"
+        android:screenOrientation="portrait" />
 </application>
 
 </manifest>

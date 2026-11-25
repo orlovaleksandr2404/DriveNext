@@ -44,10 +44,16 @@ class HomeFragment : Fragment() {
         carAdapter = CarAdapter(
             cars = emptyList(),
             onBookClick = { car ->
-                Toast.makeText(requireContext(), "Переход к оформлению: ${car.model}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(requireContext(), BookingActivity::class.java).apply {
+                    putExtra(BookingActivity.EXTRA_CAR, car)
+                }
+                startActivity(intent)
             },
             onDetailsClick = { car ->
-                Toast.makeText(requireContext(), "Детали: ${car.brand} ${car.model}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(requireContext(), CarDetailsActivity::class.java).apply {
+                    putExtra(CarDetailsActivity.EXTRA_CAR, car)
+                }
+                startActivity(intent)
             }
         )
         binding.rvCars.layoutManager = LinearLayoutManager(requireContext())
